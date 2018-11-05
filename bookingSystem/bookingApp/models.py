@@ -8,6 +8,7 @@ class Destination(models.Model):
     location = models.CharField(
         max_length=128,
         primary_key=True,
+        default="Kisumu",
         verbose_name="Location")
 
     def addLocation(self):
@@ -21,6 +22,7 @@ class Office(models.Model):
     location = models.CharField(
         max_length=128,
         primary_key=True,
+        default="Kisumu",
         verbose_name="Location")
 
     def addLocation(self):
@@ -34,6 +36,7 @@ class Make(models.Model):
     vehicleMake = models.CharField(
         max_length=128,
         primary_key=True,
+        default="Add",
         verbose_name="Vehicle Make")
 
     def addVehicle(self):
@@ -70,6 +73,7 @@ class Sacco(models.Model):
     saccoName = models.CharField(
         max_length=128,
         primary_key=True,
+        default="Add sacco name",
         verbose_name='Sacco Name')
     num = models.PositiveSmallIntegerField(
         default=1, verbose_name="Number of vehicles")
@@ -87,7 +91,7 @@ class Vehicle(models.Model):
         primary_key=True,
         default='Not available',
         verbose_name="Number plate")
-    capacity = models.PositiveSmallIntegerField(verbose_name="Capacity")
+    capacity = models.PositiveSmallIntegerField(default=14,verbose_name="Capacity")
     seatsTaken = models.PositiveSmallIntegerField(
         default=10, verbose_name="Seats Taken")
     destination = models.ForeignKey(
@@ -129,6 +133,7 @@ class Vehicle(models.Model):
 
 class Parcel(models.Model):
     weight = models.DecimalField(
+        default=0.0,
         max_digits=4,
         decimal_places=2,
         verbose_name="Weight")
