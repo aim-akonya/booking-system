@@ -27,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['192.168.43.89',
                  'localhost',
                  '192.168.137.1'
+				 'demo-booking-system.herokuapp.com',
                  ]
 
 
