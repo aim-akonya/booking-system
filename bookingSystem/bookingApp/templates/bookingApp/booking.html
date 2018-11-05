@@ -1,0 +1,39 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}Book vehicle{%endblock title%}
+{% block content %}s
+<form method="POST" action="{%url 'booking' %}">
+  {%csrf_token%}
+  <div class="col-md-8">
+    <div class="form-row">
+      <div class="col">
+        Please specify your desired vehicle particulars
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-4 form-group">
+        {{form.pickUpDate.label_tag}}{{form.pickUpDate}}
+        </div>
+        <div class="col-sm-4 form-group">
+        {{form.returnDate.label_tag}}{{form.returnDate}}
+       </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-4 form-group">
+        {{form.location.label_tag}}{{form.location}}
+      </div>
+      <div class="col-sm-4 form-group">
+        {{form.destination.label_tag}}{{form.destination}}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-4 form-group">
+        {{form.number.label_tag}}{{form.number}}
+      </div>
+      <div class="col-sm-4 form-group">
+        {{form.vehicleMake.label_tag}}{{form.vehicleMake}}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Check for Availability</button>
+  </div>
+</form>
+{% endblock %}

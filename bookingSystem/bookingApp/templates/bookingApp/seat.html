@@ -1,0 +1,22 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}Book seat{%endblock%}
+{% block content %}
+<form  method="POST" action="{%url 'seat' %}">
+  {% csrf_token %}
+  <div class="col-md-8">
+    <div class="form-row">
+      <div class="col-sm-4">
+        {{form.source.label_tag}} {{form.source}}
+      </div>
+      <div class="col-sm-4">
+        {{form.destination.label_tag}} {{form.destination}}
+      </div>
+      <div class="col-sm-4">
+        {{form.departureTime.label_tag}} {{form.departureTime}}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">View available seats</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+  </div>
+</form>
+{%endblock%}

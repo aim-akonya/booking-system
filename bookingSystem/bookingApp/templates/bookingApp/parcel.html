@@ -1,0 +1,35 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}Book parcels{%endblock%}
+{% block content %}
+Parcel Details
+<div class="container col-md-10">
+  <form  method="POST" action="{%url 'parcel' %}">
+    {%csrf_token%}
+    <div class="form-row">
+      <div class="col-sm-4">
+        {{form.weight.label_tag}} {{form.weight}}
+      </div>
+        <div class="col-sm-4">
+          {{form.fragile.label_tag}}{{form.fragile}}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm-4">
+          {{form.recipient.label_tag}} {{form.recipient}}
+        </div>
+        <div class="col-sm-4">
+          {{form.recipientId.label_tag}} {{form.recipientId}}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm-4">
+          {{form.source.label_tag}} {{form.source}}
+        </div>
+        <div class="col-sm-4">
+          {{form.destination.label_tag}} {{form.destination}}
+        </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit Parcel</button>
+  </form>
+</div>
+{%endblock%}

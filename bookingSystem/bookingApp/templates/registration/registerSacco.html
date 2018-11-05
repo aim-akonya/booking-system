@@ -1,0 +1,50 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}Register{%endblock%}
+{% block content %}
+<div class="container-fluid col-md-8">
+  <form method="POST" action="{%url 'registerSacco' %}">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="col-sm-4">
+        {{form.saccoName.label_tag}} {{form.saccoName}}
+        {% if form.errors.saccoName %}
+        <div class="text-warning">
+        The sacco already exists
+        </div>
+        {%endif%}
+      </div>
+      <div class="col-sm-4">
+        {{form.num.label_tag}} {{form.num}}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-4">
+        {{form.username.label_tag}} {{form.username}}
+        {%if form.errors.username %}
+        <div class="text-warning">
+        That username already exists
+        </div>
+        {%endif%}
+      </div>
+      <div class="col-sm-4">
+        {{form.password.label_tag}} {{form.password}}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-sm-4">
+        {{form.location.label_tag}}
+      </div>
+    </div>
+    {%for checkbox in form.location%}
+    <div class="form-check-inline">
+      <label class="form-check-label">
+        {{checkbox.tag}}{{checkbox.choice_label}}
+      </label>
+    </div>
+      {%endfor%}
+    <div>
+      <button type="submit" class="btn btn-primary">Register Sacco</button>
+    </div>
+  </form>
+</div>
+{%endblock%}

@@ -1,0 +1,63 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}View Seats{%endblock%}
+{% block content %}
+<div>
+  {%if vehicles%}
+Vehicles added <a class="btn btn-right" href="{%url 'addVehicle'%}">Add vehicle</a>
+  <table id="vehicles" class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Number Plate</th>
+        <th scope="col">Make</th>
+        <th scope="col">Route</th>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Arrival Time</th>
+        <th scope="col">Seat Type</th>
+        <th scope="col">Seat Price</th>
+        <th scope="col">Modify/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for vehicle in vehicles %}
+    <tr>
+      <td>{{vehicle.numberPlate}}</td>
+      <td>{{vehicle.vehicleMake}}</td>
+      <td>{{vehicle.source}}-{{vehicle.destination}}</td>
+      <td>{{vehicle.departureTime}}</td>
+      <td>{{vehicle.arrivalTime}}</td>
+      <td>{{vehicle.seatType.capitalize}}</td>
+      <td>{{vehicle.seatPrice}}</td>
+      <td>
+        <a href="{%url 'editVehicle' pk=vehicle.numberPlate%}">
+            <i class="fa fa-pencil-alt">Edit</i>
+        </a>
+        <a href="{%url 'deleteVehicle' pk=vehicle.numberPlate%}">
+            <i class="fa fa-trash red">Delete</i>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% if vehicles.has_other_pages %}
+  <ul class="pagination">
+      {% if vehicles.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+      <li class="page-item"><a class="page-link"  href="?page={{ vehicles.previous_page_number }}">previous</a></li>
+      {% endif %}
+      <li class="current">
+        Page {{ vehicles.number }} of {{ vehicles.paginator.num_pages }}.
+      </li>
+      {% if vehicles.has_next %}
+      <li class="page-item"><a class="page-link"  href="?page={{ vehicles.next_page_number }}">next</a></li>
+      <li class="page-item"><a class="page-link"  href="?page={{ vehicles.paginator.num_pages }}">last &raquo;</a>
+      {% endif %}
+      </li>
+  </ul>
+  {%endif%}
+  {%else%}
+  <div class="misc">No vehicles has beeen added.<a href="{%url 'addVehicle'%}">Add vehicle.</a></div>
+  {%endif%}
+
+</div>
+{%endblock%}

@@ -1,0 +1,26 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}View vehicles{%endblock%}
+{% block content %}
+<div class="col-md-8">
+  <table class="table table-border">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Sacco</th>
+        <th scope="col">Number Plate</th>
+        <th scope="col">Make</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dict_item in table_list %}
+    <tr>
+      <td>{{dict_item.saccoName}}</td>
+      <td> {{ dict_item.numberPlate }} </td>
+       <td> {{ dict_item.vehicleMake }} </td>
+       <td>{{dict_item.hirePrice}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{%endblock%}

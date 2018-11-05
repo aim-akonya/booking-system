@@ -1,0 +1,23 @@
+{% extends 'bookingApp/home.html' %}
+{%block title%}Log in{%endblock%}
+{% block content %}
+<div class="container-fluid">
+  <form method="POST" action="{%url 'logIn' %}">
+    {%csrf_token%}
+    <div class="form-row">
+      {% if form.errors.username or form.errors.password %}
+      <div class="text-warning">
+      Wrong username or password
+      </div>
+      {%endif%}
+      <div class="col-sm-4">
+        {{form.username.label_tag}} {{form.username}}
+      </div>
+      <div class="col-sm-4">
+        {{form.password.label_tag}} {{form.password}}
+      </div>
+     </div>
+     <button type="submit" class="btn btn-primary">Log in</button>
+  </form>
+</div>
+{%endblock%}

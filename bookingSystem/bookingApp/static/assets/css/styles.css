@@ -1,0 +1,102 @@
+.navbar{
+  background-color: #49C22B;
+}
+
+.nav-link{
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: "Georgia",serif;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+}
+.nav-link:hover,.misc:hover{
+  background-color: #000033;
+  border-radius: 0.5em;
+  margin-top: 2px;
+}
+.header{
+  background-image: url("../img/tropics.jpg");
+  font-family: "Algerian",serif;
+  color: #FFFFFF;
+  height: 100px;
+  text-align: center;
+  font-size: 70px;
+}
+.col{
+  color: white;
+}
+.navbar-brand{
+  color: #FFFFFF;
+  font-size: 30px;
+  font-family: "Georgia",serif;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+}
+.navbar-toggler-icon{
+  color: white;
+}
+.btn{
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    margin-top: 10px;
+}
+.btn-right{
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    margin-left: 60%;
+}
+.form-control{
+  background-image: url("../img/tropics.jpg");
+  max-width: 95%;
+  border-color: white;
+}
+.form-row{
+  margin-top: 20px;
+  color: white;
+}
+
+.col-md-8{
+  margin-top: 20px;
+}
+.carousel-caption{
+    left: 0;
+    line-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+.carousel-item .img-fluid{
+  width:100%;
+  height:100%;
+}
+.alert-warning{
+  background-color: none;
+}
+.col-sm-4{
+  margin: 10px;
+}
+input{
+  color: #FFFFFF;
+}
+body{
+  background-image: url("../img/mombasa.jpg");
+  color: #FFFFFF
+}
+.table{
+  margin-top: 30px;
+  color: #FFFFFF;
+}
+.misc{
+  color: #FFFFFF
+}
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
