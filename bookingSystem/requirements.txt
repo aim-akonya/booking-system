@@ -21,10 +21,8 @@ django-simple-pagination==1.2
 django-tables2==2.0.1
 django-widget-tweaks==1.4.3
 django.js==0.8.1
-Flask==1.0.2
 future==0.16.0
 idna==2.7
-ItsDangerous==1.0.0
 Jinja2==2.10
 kiwisolver==1.0.1
 macholib==1.10
